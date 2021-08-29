@@ -6,7 +6,6 @@ import { IProduct } from "./product";
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
-
 export class ProductListComponent implements OnInit {
     pageTitle: string = 'Product List';
     imageWidth: number = 50;
@@ -60,5 +59,9 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit(): void {
         this.listFilter = 'cart';
+    }
+
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Product List: ' + message;
     }
 }
